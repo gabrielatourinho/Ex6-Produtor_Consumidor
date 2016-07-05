@@ -15,8 +15,10 @@ public class Buffer {
     int count, front, rear;
     
     public synchronized char get() throws InterruptedException{
-        while (count == 0)
+        while (count == 0){
+            System.out.println("esperando");
             wait();
+        }
         char x = keep[rear];
         rear = (rear+1) % MAXSIZE;
         count--;

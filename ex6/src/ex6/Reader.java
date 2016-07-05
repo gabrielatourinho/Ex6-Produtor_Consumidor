@@ -14,18 +14,22 @@ import java.util.logging.Logger;
  */
 public class Reader implements Runnable {
     Buffer b;
+    int id;
     
     public void run(){
         char x;
         try {
+            System.out.println("Try "+id);
             while ((x = b.get()) != '\032')
-                System.out.print(x);
+                System.out.println("Cliente "+id+" lendo: "+x);
         } catch (InterruptedException ex) {
             Logger.getLogger(Reader.class.getName()).log(Level.SEVERE, null, ex);
+            System.err.println("Exception na thread "+id);
         }
     }
     
-    Reader(Buffer b){
+    Reader(Buffer b, int id){
         this.b = b;
+        this.id = id;
     }
 }
