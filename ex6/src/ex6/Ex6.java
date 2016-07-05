@@ -12,7 +12,21 @@ package ex6;
 public class Ex6 {
 
     public static void main(String[] args) {
+        Buffer buffer =  new Buffer();
         
+        Writer writer = new Writer("file.txt",buffer);
+        
+        Reader c1 = new Reader(buffer);
+        Thread t1 =  new Thread(c1);
+        t1.start();
+        
+        Reader c2 = new Reader(buffer);
+        Thread t2 = new Thread(c2);
+        t2.start();
+        
+        Reader c3 = new Reader(buffer);
+        Thread t3 = new Thread(c3);
+        t3.start();
     }
     
 }
