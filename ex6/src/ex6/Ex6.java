@@ -29,14 +29,12 @@ public class Ex6 {
         System.out.println("Start na thread 1.");
         t1.start();
         
-        
-        /*Reader c2 = new Reader(buffer, 2);
+        System.out.println("Criando reader 2.");
+        Reader c2 = new Reader(buffer, 2);
+        System.out.println("Criando thread reader 2.");
         Thread t2 = new Thread(c2);
+        System.out.println("Start na thread 2.");
         t2.start();
-        
-        Reader c3 = new Reader(buffer, 3);
-        Thread t3 = new Thread(c3);
-        t3.start();*/
     }
     
 }

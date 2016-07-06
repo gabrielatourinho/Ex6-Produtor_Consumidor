@@ -16,7 +16,6 @@ public class Buffer {
     
     public synchronized char get() throws InterruptedException{
         while (count == 0){
-            System.out.println("esperando");
             wait();
         }
         char x = keep[rear];

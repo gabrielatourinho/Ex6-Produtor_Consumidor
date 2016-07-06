@@ -19,7 +19,6 @@ public class Reader implements Runnable {
     public void run(){
         char x;
         try {
-            System.out.println("Try "+id);
             while ((x = b.get()) != '\032')
                 System.out.println("Cliente "+id+" lendo: "+x);
         } catch (InterruptedException ex) {
